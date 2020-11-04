@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tes By Tino</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' language="Javascript"></script>
+</head>
+<body>
+	<table id='tabel'>
+		<tr>
+			<td>Usia Anak</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='usiaAnak'>
+			</td>
+		</tr>
+		<tr>
+			<td>Jangka Waktu Simpanan</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='jangkaWaktuSimpanan'>
+			</td>
+		</tr>
+		<tr>
+			<td>Biaya Pendidikan Saat Ini</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='biayaPendidikanSaatIni'>
+			</td>
+		</tr>
+		<tr>
+			<td>Inflasi Pendidikan (%)</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='inflasiPendidikan'>
+			</td>
+		</tr>
+		<tr>
+			<td>Biaya Pendidikan Nantinya</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='biayaPendidikanNantinya'>
+			</td>
+		</tr>
+		<tr>
+			<td>Asumsi Bunga Investasi (%)</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='asumsiBungaInvestasi'>
+			</td>
+		</tr>
+		<tr style='display: none'>
+			<td colspan='3'>
+				<input type="number" id='tersembunyi'>
+			</td>
+		</tr>
+		<tr>
+			<td>Tabungan Regular Bulanan</td>
+			<td>:</td>
+			<td>
+				<input type="number" id='tabunganRegularBulanan'>
+			</td>
+		</tr>
+	</table>
+	<script language="Javascript">
+
+		function operasi(){
+		}
+
+		$('#tabel input').on('keyup', function(){
+			let usiaAnak 				=	$('#usiaAnak').val();
+			let jangkaWaktuSimpanan 	=	$('#jangkaWaktuSimpanan').val();
+			let biayaPendidikanSaatIni 	=	$('#biayaPendidikanSaatIni').val();
+			let inflasiPendidikan 		=	$('#inflasiPendidikan').val();
+			let biayaPendidikanNantinya 	=	$('#biayaPendidikanNantinya').val();
+			let asumsiBungaInvestasi 		=	$('#asumsiBungaInvestasi').val();
+			let tersembunyi 				=	$('#tersembunyi').val();
+			let tabunganRegularBulanan 		=	$('#tabunganRegularBulanan').val();
+
+			let jWS 	=	18 - usiaAnak;
+			let iP 		=	parseFloat(inflasiPendidikan/100);
+
+			$('#jangkaWaktuSimpanan').val(jWS);
+
+			let bPN 	=	biayaPendidikanSaatIni * (1+iP)**jWS;
+
+			asumsiBungaInvestasi 	=	parseFloat(asumsiBungaInvestasi/100);
+			let tersembunyiValue 	=	parseFloat(1/(1+(asumsiBungaInvestasi/12)));
+			$('#tersembunyi').val(tersembunyiValue);
+
+			$('#biayaPendidikanNantinya').val(bPN);
+
+
+			let tBR 	=	(bPN *(asumsiBungaInvestasi/12 * tersembunyiValue))/((1+asumsiBungaInvestasi/12) ** (jWS*12)-1);
+
+			$('#tabunganRegularBulanan').val(tBR);
+		})
+	</script>
+</body>
+</html>

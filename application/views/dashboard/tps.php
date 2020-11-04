@@ -1,0 +1,197 @@
+
+<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
+
+<title>: TPS :</title>
+<link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
+<!-- Favicon-->
+<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<!-- JQuery DataTable Css -->
+<link rel="stylesheet" href="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css">
+<!-- Custom Css -->
+<link  rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/color_skins.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<style>
+.onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 25px;
+    font-size: 8px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "OFF";
+    padding-left: 0px;
+    background-color: #EEEEEE; color: #999999;
+}
+.onoffswitch-inner:after {
+    content: "ON";
+    padding-right: 35px;
+    background-color: #54d345; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 59px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.btn, .navbar .navbar-nav>a.btn {
+    margin-top: 0px;
+    margin-bottom:  0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.progress {
+  margin: 0px;
+  width: 100px;
+  font-size: 6px;
+}
+</style>
+</head>
+<body class="theme-purple">
+<style type="text/css">
+    /*.table-striped tbody tr:nth-of-type(odd){
+        background-color: transparent;
+    }*/
+
+    #nama{
+    color: #261010 !important;
+}
+
+</style>
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img src="../assets/images/logo.png" width="48" height="48" alt=""></div>
+        <p>Mohon Tunggu Sebentar</p>        
+    </div>
+</div>
+
+<!-- Overlay For Sidebars -->
+<div class="overlay"></div>
+
+<!-- Top Bar -->
+<nav class="navbar p-l-5 p-r-5">
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="#><img src="../assets/images/logo.png" width="30" alt=""><span class="m-l-10">Quick Count</span></a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!-- Left Sidebar -->
+<?php  
+    $this->load->view("template_config/sidebar");
+?>
+
+
+
+<section class="content">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <center>
+                    <h2>Daftar TPS
+                <div>
+                <!-- <small style="color: #00a651"> --><small></small>
+                    </h2>
+                </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <!-- Basic Examples -->
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Daftar</strong> </h2>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Kecamatan</th>
+                                        <th>Kelurahan</th>
+                                        <th>Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Medan</td>
+                                        <td>Asam Kumbang</td>
+                                        <td><i class="zmdi zmdi-download zmdi-hc-fw"></i></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Medan</td>
+                                        <td>Sunggal</td>
+                                        <td><i class="zmdi zmdi-download zmdi-hc-fw"></i></td>
+                                    </tr>   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Basic Examples --> 
+        
+    </div>
+</section>
+
+
+<!-- Jquery Core Js --> 
+<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<!-- Jquery DataTable Plugin Js --> 
+<script src="https://thememakker.com/templates/oreo/html/light/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/buttons/dataTables.buttons.min.js"></script>
+<script src="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/buttons/buttons.bootstrap4.min.js"></script>
+<script src="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/buttons/buttons.colVis.min.js"></script>
+<script src="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/buttons/buttons.html5.min.js"></script>
+<script src="https://thememakker.com/templates/oreo/html/assets/plugins/jquery-datatable/buttons/buttons.print.min.js"></script>
+
+<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js --> 
+<script src="https://thememakker.com/templates/oreo/html/light/assets/js/pages/tables/jquery-datatable.js"></script>
+</body>
+</html>
